@@ -1,7 +1,7 @@
 // config/db.js
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('carrot', 'postgres', '123456', {
+const sequelize = new Sequelize('socialhub', 'postgres', '123456', {
     host: 'localhost',
     dialect: 'postgres'
 });
