@@ -1,5 +1,4 @@
 # Project Structure: Social Media App
-
 SocialHub-app/
 │── backend/                # Node.js + Express Backend
 │   ├── node_modules/
@@ -27,4 +26,17 @@ SocialHub-app/
 │   │   ├── App.js         # Main app file
 │   ├── public/
 │   ├── package.json
-│
+│── README.md
+
+
+# How to run backend
+
+go to /backend and
+$ npm i
+Instructions to run:-  
+$ npx nodemon server.js
+
+
+# How to run frontend:
+$ cd /FRONTEND
+$ npm run dev

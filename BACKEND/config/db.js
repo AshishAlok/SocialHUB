@@ -1,21 +1,14 @@
-// config/db.js
-const { Sequelize } = require('sequelize');
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-const sequelize = new Sequelize('socialhub', 'postgres', '123456', {
-    host: 'localhost',
-    dialect: 'postgres'
-});
-async function testDatabaseConnection() {
+const connectDB = async () => {
     try {
-        await sequelize.authenticate();
-        console.log('Connection to database has been established successfully.');
-        await sequelize.close();
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log("MongoDB connected");
     } catch (error) {
-        console.error('Unable to connect to the database:', error);
+        console.error("MongoDB connection failed:", error);
+        process.exit(1);
     }
-}
+};
 
-// Call the async function
-// testDatabaseConnection();
-
-module.exports = sequelize;
+module.exports = connectDB;
